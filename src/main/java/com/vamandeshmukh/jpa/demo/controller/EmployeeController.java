@@ -33,7 +33,8 @@ public class EmployeeController {
 		System.out.println("eid:");
 		int eid = sc.nextInt();
 		System.out.println("firstName:");
-		String firstName = sc.next();
+//		String firstName = sc.next();
+		String firstName = sc.nextLine();
 		System.out.println("salary:");
 		double salary = sc.nextDouble();
 		Employee empToAdd = new Employee(eid, firstName, salary);

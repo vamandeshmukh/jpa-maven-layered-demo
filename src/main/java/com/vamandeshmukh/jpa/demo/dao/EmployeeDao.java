@@ -21,7 +21,7 @@ public class EmployeeDao implements IEmployeeDao {
 	@Override
 	public List<Employee> getAllEmployees() {
 		manager.getTransaction().begin();
-		String sqlString = "SELECT * FROM empt";
+		String sqlString = "SELECT * FROM empt ORDER BY eid";
 		List<Employee> empList = manager.createNativeQuery(sqlString, Employee.class).getResultList();
 		manager.getTransaction().commit();
 		return empList;
