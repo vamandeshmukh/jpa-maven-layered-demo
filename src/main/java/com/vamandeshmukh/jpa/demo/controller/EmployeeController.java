@@ -51,20 +51,19 @@ public class EmployeeController {
 		System.out.println("salary:");
 		double salary = sc.nextDouble();
 		Employee empToUpdate = new Employee(eid, firstName, salary);
-		service.addEmployee(empToUpdate);
+		service.updateEmployee(empToUpdate);
 		System.out.println(empToUpdate.toString());
+		System.out.println("Employee updated successfully.");
 		genCon.selectOption();
-		service.updateEmployee(null);
-
 	}
 
 	public void deleteEmp() {
-		System.out.println("Please enter eid:");
+		System.out.println("Please enter eid to delete an employee:");
 		int eid = sc.nextInt();
 		Employee empToDelete = service.viewEmployeeById(eid);
 		System.out.println(empToDelete.toString());
 		System.out.println("Are you sure to delete this employee?");
-		System.out.println("1. Yes\n2 . No");
+		System.out.println("1. Yes\n2. No");
 		int confirm = sc.nextInt();
 		switch (confirm) {
 		case 1:

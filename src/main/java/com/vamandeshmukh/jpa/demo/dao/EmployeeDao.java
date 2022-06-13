@@ -32,6 +32,7 @@ public class EmployeeDao implements IEmployeeDao {
 		manager.getTransaction().begin();
 		Employee selectedEmployee = manager.find(Employee.class, eid);
 		manager.getTransaction().commit();
+		manager.clear();
 		return selectedEmployee;
 	}
 
@@ -55,10 +56,10 @@ public class EmployeeDao implements IEmployeeDao {
 	@Override
 	public Employee deleteEmployee(int eid) {
 		manager.getTransaction().begin();
-		Employee deletedEmployee = this.getEmployeeById(eid);
-		manager.remove(deletedEmployee);
+		Employee empToDelete = manager.find(Employee.class, eid);
+		manager.remove(empToDelete);
 		manager.getTransaction().commit();
-		return deletedEmployee;
+		return empToDelete;
 	}
 
 }
