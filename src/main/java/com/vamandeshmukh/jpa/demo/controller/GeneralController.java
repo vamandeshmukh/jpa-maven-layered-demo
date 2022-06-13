@@ -33,7 +33,7 @@ public class GeneralController {
 			employeeController.deleteEmp();
 			break;
 		case 6:
-			this.exit();
+			this.exitApp();
 			break;
 
 		default:
@@ -44,17 +44,7 @@ public class GeneralController {
 
 	}
 
-//	private void pressAnyKeyToContinue() {
-//		System.out.println("Press Enter key to continue...");
-//		try {
-//			System.in.read();
-//		} catch (Exception e) {
-//			System.out.println("Something is wrong!");
-//			this.selectOption();
-//		}
-//	}
-
-	public void exit() {
+	public void exitApp() {
 		System.out.println("Thank for using the app.");
 		this.sc.close();
 		System.exit(0);
